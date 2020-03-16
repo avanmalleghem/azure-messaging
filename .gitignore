@@ -1,0 +1,7 @@
+ServiceBus/.vs/
+QueueStorage/packages/
+QueueStorage/.vs/
+QueueStorage/Receiver/bin/
+QueueStorage/Sender/obj/
+QueueStorage/Receiver/obj/
+QueueStorage/Sender/bin/
