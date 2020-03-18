@@ -5,3 +5,10 @@ QueueStorage/Receiver/bin/
 QueueStorage/Sender/obj/
 QueueStorage/Receiver/obj/
 QueueStorage/Sender/bin/
+ServiceBus/DeadLetterQueueConsumer/bin/
+ServiceBus/DeadLetterQueueConsumer/obj/
+ServiceBus/packages/
+ServiceBus/Receiver/bin/
+ServiceBus/Receiver/obj/
+ServiceBus/Sender/bin/Debug/
+ServiceBus/Sender/obj/
