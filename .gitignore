@@ -12,3 +12,7 @@ ServiceBus/Receiver/bin/
 ServiceBus/Receiver/obj/
 ServiceBus/Sender/bin/Debug/
 ServiceBus/Sender/obj/
+/EventGrid/.vs/EventGrid
+/EventGrid/EventHandler/Properties/PublishProfiles
+/EventGrid/EventSource/bin
+/EventGrid/EventSource/obj
