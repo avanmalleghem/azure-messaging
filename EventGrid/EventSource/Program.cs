@@ -7,10 +7,9 @@ namespace EventSource
 {
     class Program
     {
-        static string topicKey = "0zm+QaGlSpcCbE3Awq/ZrYl7kpo/o39junVUDXncWfo=";
-        static string topicEndpoint = "https://firsttopic1234.francecentral-1.eventgrid.azure.net/api/events";
+        static string topicKey = "";
+        static string topicEndpoint = "";
         static string topicHostname = new Uri(topicEndpoint).Host;
-        static string eventType = "eventTypeSms";
 
         static void Main(string[] args)
         {
@@ -32,7 +31,7 @@ namespace EventSource
                 eventsList.Add(new EventGridEvent()
                 {
                     Id = Guid.NewGuid().ToString(),
-                    EventType = eventType,
+                    EventType = "eventTypeSms",
                     Data = new EventSourceSmsContentEntity
                     {
                         From = "Antoine",
