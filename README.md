@@ -19,5 +19,11 @@ You can then update the 3 files **Program.cs** (static variables).
 **ToDo**
 
 ## Event Grid Sandbox
-**ToDo**
+This sandbox contains 2 projects :
+* EventSource : this project contains a publisher of events. To use it, you need to create an **event grid topic**. You can then update the static variables.
+* EventHandler : this project contains 2 azure functions (handlers) :
+    * EventGridTriggerFunction.cs : This azure function uses the **EventGridTrigger** (Azure function handler)
+    * WebhookTriggerFunction.cs : This azure function uses the **HttpTrigger** (Webhook handler)
+    
+**ToDo** : powershell file to create the event Grid Topic and the 2 event grid subscriptions (+ binding with the azure functions).
 
