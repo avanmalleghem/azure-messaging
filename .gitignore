@@ -16,3 +16,9 @@ ServiceBus/Sender/obj/
 /EventGrid/EventHandler/Properties/PublishProfiles
 /EventGrid/EventSource/bin
 /EventGrid/EventSource/obj
+/EventHubs/EventHubReceiver/bin/Debug/netcoreapp3.1
+/EventHubs/EventHubReceiver/obj
+/EventHubs/EventProcessorHost/bin/Debug/netcoreapp3.1
+/EventHubs/EventProcessorHost/obj
+/EventHubs/Sender/obj
+/EventHubs/Sender/bin/Debug/netcoreapp3.1
