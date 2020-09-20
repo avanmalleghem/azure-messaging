@@ -10,7 +10,7 @@ namespace DeadLetterQueueConsumer
     {
         private static string ServiceBusConnectionString = "";
         private static string TopicName = "";
-        private static string SubscriptionName = "";
+        private static string SubscriptionName = ""; // /$DeadLetterQueue
 
         static ISubscriptionClient subscriptionClient;
 
