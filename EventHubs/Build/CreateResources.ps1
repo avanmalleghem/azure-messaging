@@ -1,14 +1,14 @@
 $resourceGroup="rg-avanmatest-poc"
 $namespaceName="nn-avanmatest-poc"
 $eventhubsName="eh-avanmatest-poc"
-$storageAccountName="sa-avanmatest-poc"
+$storageAccountName="saavanmatestpoc"
 $containerName="c-avanmatest-poc"
  
 # Create a namespace in the resource-group
 az eventhubs namespace create --name $namespaceName --resource-group $resourceGroup
 
 # Create an event hubs in the namespace
-az eventhubs eventhub create --name $eventhubsName --namespace-name $namespaceName
+az eventhubs eventhub create --name $eventhubsName --namespace-name $namespaceName --resource-group $resourceGroup
 
 # Create a storage account in the resource-group for the EventProcessorHost
 az storage account create --name $storageAccountName `

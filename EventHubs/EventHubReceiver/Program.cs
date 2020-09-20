@@ -12,14 +12,14 @@ namespace EventHubReceiver
 {
     class Program
     {
-        private const string EventHubConnectionString = "";
+        private const string EventHubNamespaceConnectionString = "";
         private const string EventHubName = "";
         private const string ConsumerGroupName = "";
         private static PartitionReceiver _receiver;
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            var connectionStringBuilder = new EventHubsConnectionStringBuilder(EventHubConnectionString)
+            var connectionStringBuilder = new EventHubsConnectionStringBuilder(EventHubNamespaceConnectionString)
             {
                 EntityPath = EventHubName
             };
@@ -41,7 +41,7 @@ namespace EventHubReceiver
             var sms = await _receiver.ReceiveAsync(number);
             foreach (EventData s in sms)
             {
-                Console.WriteLine($"Event Read from ReceiveAsync: { FromByteArray<SmsContent>(s.Body.ToArray()) }");
+                Console.WriteLine($"Event Read from ReceiveAsync: { FromByteArray<SmsContent>(s.Body.ToArray()) } - Partition key : {s.SystemProperties.PartitionKey}");
             }
         }
 

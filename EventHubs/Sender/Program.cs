@@ -9,7 +9,7 @@ namespace Sender
 {
     class Program
     {
-        private const string EventHubConnectionString = "";
+        private const string EventHubNamespaceConnectionString = "";
         private const string EventHubName = "";
 
         static void Main(string[] args)
@@ -17,7 +17,7 @@ namespace Sender
             // Creates an EventHubsConnectionStringBuilder object from a the connection string, and sets the EntityPath.
             // Typically the connection string should have the Entity Path in it, but for the sake of this simple scenario
             // we are using the connection string from the namespace.
-            var connectionStringBuilder = new EventHubsConnectionStringBuilder(EventHubConnectionString)
+            var connectionStringBuilder = new EventHubsConnectionStringBuilder(EventHubNamespaceConnectionString)
             {
                 EntityPath = EventHubName
             };
@@ -25,20 +25,19 @@ namespace Sender
             var client = EventHubClient.CreateFromConnectionString(connectionStringBuilder.ToString());
             while(Console.ReadLine() != "q")
             {
-                var batch = GetDataList(null);
+                var batch = GetDataList();
                 // RoundRobin over the partitions
                 client.SendAsync(batch).GetAwaiter().GetResult();
 
                 // you can also send with a particular partition key. Only if needed !!! PARTITION KEY != PARTITION NAME
                 Console.WriteLine("Partition key name ?");
                 var pKey = Console.ReadLine();
-                var batch2 = GetDataList(pKey);
                 client.SendAsync(batch, pKey).GetAwaiter().GetResult();
             }
             client.CloseAsync().GetAwaiter().GetResult();
         }
 
-        private static List<EventData> GetDataList(string pKey)
+        private static List<EventData> GetDataList()
         {
             var myData = new List<EventData>();
             for(int i=0; i< 10; i++)
